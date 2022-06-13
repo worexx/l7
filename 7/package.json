@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lab7.js",
+  "scripts": {
+    "start": "nodemon lab7.js"
+  },
+  "keywords": [],
+  "author": "Dmytro Kuts",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "dotenv": "^16.0.0",
+    "openweather-apis": "^4.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

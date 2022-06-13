@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+* {
+  padding: 0;
+  margin: 0;
+  /* box-sizing: border-box; */
+}
+
+:root {
+  --innerMargins: 15px;
+  --parentWidth: 700px;
+  --parentHeight: 550px;
+  --borderWidth: 5px;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: #0cebeb;
+  background: -webkit-linear-gradient(to left, #29ffc6, #20e3b2, #0cebeb);
+  background: linear-gradient(to left, #29ffc6, #20e3b2, #0cebeb);
+  backdrop-filter: blur(10px);
+}
+
+#city {
+  font-weight: bold;
+}
+
+#delimiter {
+  display: block;
+  height: 4px;
+  width: calc(var(--parentWidth) - var(--innerMargins) * 2);
+  background-color: #fff;
+  margin-top: 10px;
+}
+
+.list {
+  margin-top: 25px;
+  font-size: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.list > li {
+  list-style-type: none;
+  min-height: 40px;
+}
+
+.list > li > span {
+  font-weight: bold;
+}
+
+#box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  height: 550px;
+  color: white;
+  font-family: 'Raleway';
+  font-size: 2.5rem;
+  position: relative;
+}
+
+.wrapper {
+  display: block;
+  position: absolute;
+  width: calc(var(--parentWidth) - var(--innerMargins) * 2);
+  height: calc(var(--parentHeight) - var(--innerMargins) * 2);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gradient-border {
+  background: #1d1f20;
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+
+.gradient-body {
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  top: calc(-1 * var(--borderWidth));
+  left: calc(-1 * var(--borderWidth));
+  height: calc(100% + var(--borderWidth) * 2);
+  width: calc(100% + var(--borderWidth) * 2);
+  background: linear-gradient(
+    60deg,
+    #f79533,
+    #f37055,
+    #ef4e7b,
+    #a166ab,
+    #5073b8,
+    #1098ad,
+    #07b39b,
+    #6fba82
+  );
+  border-radius: calc(2 * var(--borderWidth));
+  z-index: -1;
+  animation: animatedgradient 3s ease alternate infinite;
+  background-size: 300% 300%;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
